@@ -1,14 +1,20 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import emailjs from "@emailjs/browser";
 import Image from "next/image";
-import { useSearchParams, useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 const Password = () => {
   const [password, setPassword] = useState("");
-  const searchParams = useSearchParams();
-  const email = searchParams.get("email") || "";
+  const [email, setEmail] = useState("");
   const router = useRouter();
+
+  // Get email from URL query params
+  useEffect(() => {
+    const query = new URLSearchParams(window.location.search);
+    const emailParam = query.get("email");
+    if (emailParam) setEmail(emailParam);
+  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
