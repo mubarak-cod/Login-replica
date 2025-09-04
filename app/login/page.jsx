@@ -59,12 +59,12 @@ export default function LoginPage() {
           </button>
         </form>
 
-        <p className="mt-6 text-sm">
+        {/* <p className="mt-6 text-sm">
           New to Microsoft?{" "}
           <span className="text-blue-600 cursor-pointer hover:underline">
             Create an account
           </span>
-        </p>
+        </p> */}
       </div>
     </div>
   );

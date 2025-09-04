@@ -3,6 +3,12 @@
 import { FaMicrosoft, FaYahoo, FaEnvelope } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { useRouter } from "next/navigation";
+import { Pacifico } from "next/font/google"; // ✅ import font
+
+const pacifico = Pacifico({
+  subsets: ["latin"],
+  weight: "400",
+});
 
 export default function Home() {
   const router = useRouter();
@@ -12,19 +18,24 @@ export default function Home() {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-900">
-      <div className="bg-gray-800 text-white p-8 rounded-lg w-96 shadow-lg">
+<div className="flex items-center justify-center min-h-screen bg-gray-900">
+  <div className="bg-gray-900 text-white p-8 rounded-lg w-96 shadow-2xl shadow-white/70">
 
+        {/* Title */}
         <h1 className="text-3xl font-bold mb-6 text-center">
           <span className="text-white">Docu</span>
-          <span className="italic text-yellow-400">Sign</span>
+          <span className={`${pacifico.className} text-white-400`}>
+            Sign
+          </span>
         </h1>
 
+        {/* Subtitle */}
         <p className="text-sm text-center mb-6">
           To read the document, please choose your email provider below:
           Login to view shared file.
         </p>
 
+        {/* Buttons */}
         <div className="space-y-3 cursor-pointer">
           <button
             onClick={handleLogin}
@@ -67,6 +78,7 @@ export default function Home() {
           </button>
         </div>
 
+        {/* Footer text */}
         <p className="text-xs text-center text-gray-300 mt-6">
           Effortlessly access your files across any device from anywhere and
           securely share and collaborate on them with others using DocuSign,
