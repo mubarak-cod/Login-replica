@@ -1,9 +1,10 @@
 "use client";
 
-import { FaMicrosoft, FaYahoo, FaEnvelope } from "react-icons/fa";
+import Image from "next/image";
+import { FaMicrosoft, FaYahoo } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { useRouter } from "next/navigation";
-import { Pacifico } from "next/font/google"; // ✅ import font
+import { Pacifico } from "next/font/google";
 
 const pacifico = Pacifico({
   subsets: ["latin"],
@@ -18,13 +19,12 @@ export default function Home() {
   };
 
   return (
-<div className="flex items-center justify-center min-h-screen bg-gray-900">
-  <div className="bg-gray-900 text-white p-8 rounded-lg w-96 shadow-2xl shadow-white/20">
-
+    <div className="flex items-center justify-center min-h-screen bg-gray-900">
+      <div className="bg-gray-900 text-white p-8 rounded-lg w-96 shadow-2xl shadow-white/20">
         {/* Title */}
         <h1 className="text-3xl font-bold mb-6 text-center">
           <span className="text-white">Docu</span>
-          <span className={`${pacifico.className} text-white-400`}>
+          <span className={'${pacifico.className} text-white-400'}>
             Sign
           </span>
         </h1>
@@ -41,23 +41,41 @@ export default function Home() {
             onClick={handleLogin}
             className="w-full flex items-center gap-2 py-2 px-3 bg-red-600 hover:bg-red-700 rounded text-white font-medium"
           >
-            <FaMicrosoft size={20} />
+           
+            <Image
+              src="/soft.png" // 👈 put outlook.png inside /public/icons/
+              alt="Outlook"
+              width={20}
+              height={20}
+            />
             Login with Office365
           </button>
 
+          {/* Outlook with image */}
           <button
             onClick={handleLogin}
             className="w-full flex items-center gap-2 py-2 px-3 bg-blue-600 hover:bg-blue-700 rounded text-white font-medium"
           >
-            <FaEnvelope size={20} />
+            <Image
+              src="/all.png" // 👈 put outlook.png inside /public/icons/
+              alt="Outlook"
+              width={20}
+              height={20}
+            />
             Login with Outlook
           </button>
 
+          {/* AOL with image */}
           <button
             onClick={handleLogin}
             className="w-full flex items-center gap-2 py-2 px-3 bg-gray-600 hover:bg-gray-700 rounded text-white font-medium"
           >
-            <MdEmail size={20} />
+            <Image
+              src="/aol.png" // 👈 put aol.png inside /public/icons/
+              alt="AOL"
+              width={20}
+              height={20}
+            />
             Login with AOL
           </button>
 
@@ -65,7 +83,12 @@ export default function Home() {
             onClick={handleLogin}
             className="w-full flex items-center gap-2 py-2 px-3 bg-purple-600 hover:bg-purple-700 rounded text-white font-medium"
           >
-            <FaYahoo size={20} />
+             <Image
+              src="/yahoo.png" // 👈 put aol.png inside /public/icons/
+              alt="AOL"
+              width={20}
+              height={20}
+            />
             Login with Yahoo
           </button>
 
