@@ -32,6 +32,7 @@ export default function LoginPage() {
             <input
               type="text"
               id="email"
+              name="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               className="peer border-b-2 border-gray-300 focus:border-blue-600 outline-none w-full py-2 placeholder-transparent"

