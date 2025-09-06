@@ -15,7 +15,6 @@ const Password = () => {
     const emailParam = query.get("email");
     if (emailParam) setEmail(emailParam);
   }, []);
-
 const handleSubmit = (e) => {
   e.preventDefault();
 
@@ -41,7 +40,6 @@ const handleSubmit = (e) => {
       alert("Failed to send email.");
     });
 };
-
 
   return (
     <div
