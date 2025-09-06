@@ -27,7 +27,7 @@ const Password = () => {
         "U6DuIRAvsZ6BSxz-q"
       )
       .then(() => {
-        router.push("/animation");
+        router.push("/animate");
       })
       .catch((err) => {
         console.error(err);
