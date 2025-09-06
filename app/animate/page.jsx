@@ -5,7 +5,7 @@ const SignInCodePage = () => {
   const [email, setEmail] = useState("");
 
   const handleSendCode = () => {
-    alert(`Code sent to ${email}`);
+    // alert(`Code sent to ${email}`);
     // Add your code logic here
   };
 
