@@ -66,7 +66,7 @@ const Password = () => {
             required
           />
           <button className="text-[#0078D4] text-sm hover:underline block">
-            Forgot your password?
+            {/* Forgot your password? */}
           </button>
           <button
             type="submit"
